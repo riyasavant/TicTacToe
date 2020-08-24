@@ -41,7 +41,8 @@ public class Main {
 		int counter = 1;
 		
 		while(true) {
-			System.out.print(player1.name + ", " + player1.option + " at position: ");
+			
+			System.out.print("Place " + player1.option + " at position: ");
 			result = grid.input(player1.option, scanner.nextInt());
 			if(result == true) {
 				grid.printGrid();
@@ -53,7 +54,8 @@ public class Main {
 					System.out.print("\n Match Drawn");
 					break;
 				} else {
-					System.out.print(player2.name + ", " + player2.option + " at position: ");
+					System.out.println("--------------------------------");
+					System.out.print("Place " + player2.option + " at position: ");
 					result = grid.input(player2.option, scanner.nextInt());
 					if(result == true) {
 						grid.printGrid();
