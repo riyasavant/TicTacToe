@@ -31,7 +31,7 @@ class Grid extends Check {
 				break;
 		}
 		
-		if(super.firstRow(option) || super.secondRow(option) || super.thirdRow(option) || super.firstColumn(option) || super.secondColumn(option) || super.thirdColumn(option) || super.rightDiagonal(option) || super.leftDiagonal(option)) {
+		if(super.checkForWinner(option)) {
 			return true;
 		} else {
 			return false;

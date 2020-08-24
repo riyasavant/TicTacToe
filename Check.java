@@ -1,7 +1,7 @@
 class Check {
 	
 	public char[][] grid = new char[3][3];
-	
+
 	Check() {
 		for(int i = 0; i < 3; i++) {
 			for(int j = 0; j < 3; j++) {
@@ -10,6 +10,25 @@ class Check {
 		}
 	}
 	
+	public boolean checkForWinner(char option) {
+		
+		boolean firstRow = (this.grid[0][0] == option && this.grid[0][1] == option && this.grid[0][2] == option);
+		boolean secondRow = (this.grid[1][0] == option && this.grid[1][1] == option && this.grid[1][2] == option);
+		boolean thirdRow = (this.grid[2][0] == option && this.grid[2][1] == option && this.grid[2][2] == option);
+		boolean firstColumn = (this.grid[0][0] == option && this.grid[1][0] == option && this.grid[2][0] == option);
+		boolean secondColumn = (this.grid[0][1] == option && this.grid[1][1] == option && this.grid[2][1] == option);
+		boolean thirdColumn = (this.grid[0][2] == option && this.grid[1][2] == option && this.grid[2][2] == option);
+		boolean rightDiagonal = (this.grid[0][0] == option && this.grid[1][1] == option && this.grid[2][2] == option);
+		boolean leftDiagonal = (this.grid[0][2] == option && this.grid[1][1] == option && this.grid[2][0] == option);
+		
+		if(firstRow || secondRow || thirdRow || firstColumn || secondColumn || thirdColumn || rightDiagonal || leftDiagonal) {
+			return true;
+		} else {
+			return false;
+		}
+		
+	}
+
 	public void printGrid() {
 		for(int i = 0; i < 3; i++) {
 			for(int j = 0; j < 3; j++) {
@@ -19,61 +38,4 @@ class Check {
 		}
 		System.out.print("\n");
 	}
-	
-	public boolean firstRow(char option) {
-		if(this.grid[0][0] == option && this.grid[0][1] == option && this.grid[0][2] == option) {
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean secondRow(char option) {
-		if(this.grid[1][0] == option && this.grid[1][1] == option && this.grid[1][2] == option) {
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean thirdRow(char option) {
-		if(this.grid[2][0] == option && this.grid[2][1] == option && this.grid[2][2] == option) {
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean firstColumn(char option) {
-		if(this.grid[0][0] == option && this.grid[1][0] == option && this.grid[2][0] == option) {
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean secondColumn(char option) {
-		if(this.grid[0][1] == option && this.grid[1][1] == option && this.grid[2][1] == option) {
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean thirdColumn(char option) {
-		if(this.grid[0][2] == option && this.grid[1][2] == option && this.grid[2][2] == option) {
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean rightDiagonal(char option) {
-		if(this.grid[0][0] == option && this.grid[1][1] == option && this.grid[2][2] == option) {
-			return true;
-		}
-		return false;
-	}
-	
-	public boolean leftDiagonal(char option) {
-		if(this.grid[0][2] == option && this.grid[1][1] == option && this.grid[2][0] == option) {
-			return true;
-		}
-		return false;
-	}
-	
 }
