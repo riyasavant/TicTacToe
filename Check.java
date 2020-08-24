@@ -12,6 +12,8 @@ class Check {
 	
 	public boolean checkForWinner(char option) {
 		
+		
+		//Storing the expressions to check for tic tac toe rules
 		boolean firstRow = (this.grid[0][0] == option && this.grid[0][1] == option && this.grid[0][2] == option);
 		boolean secondRow = (this.grid[1][0] == option && this.grid[1][1] == option && this.grid[1][2] == option);
 		boolean thirdRow = (this.grid[2][0] == option && this.grid[2][1] == option && this.grid[2][2] == option);
@@ -21,6 +23,7 @@ class Check {
 		boolean rightDiagonal = (this.grid[0][0] == option && this.grid[1][1] == option && this.grid[2][2] == option);
 		boolean leftDiagonal = (this.grid[0][2] == option && this.grid[1][1] == option && this.grid[2][0] == option);
 		
+		//If any one of the above condition is true, then the following player wins.
 		if(firstRow || secondRow || thirdRow || firstColumn || secondColumn || thirdColumn || rightDiagonal || leftDiagonal) {
 			return true;
 		} else {

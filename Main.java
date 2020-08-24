@@ -5,8 +5,10 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
+		
 		System.out.println("TIC TAC TOE");
 		System.out.println("--------------------------------");
+		
 		//Input Details of player 1
 		System.out.print("Player 1 name: ");
 		String name = scanner.next();
@@ -32,11 +34,15 @@ public class Main {
 		
 		player1.printData();
 		player2.printData();
+		
 		System.out.println("--------------------------------");
 		
+		//Printing the initial Grid
 		Grid grid = new Grid();
 		grid.printGrid();
+		
 		System.out.println("--------------------------------");
+		
 		boolean result;
 		int counter = 1;
 		
@@ -44,24 +50,33 @@ public class Main {
 			
 			System.out.print("Place " + player1.option + " at position: ");
 			result = grid.input(player1.option, scanner.nextInt());
+			
 			if(result == true) {
 				grid.printGrid();
 				System.out.print(player1.name + " wins!");
 				break;
-			} else {
+			} 
+			else {
+				
 				grid.printGrid();
 				if(counter == 9) {
 					System.out.print("\n Match Drawn");
 					break;
-				} else {
+				} 
+				
+				else {
+					
 					System.out.println("--------------------------------");
 					System.out.print("Place " + player2.option + " at position: ");
 					result = grid.input(player2.option, scanner.nextInt());
+					
 					if(result == true) {
 						grid.printGrid();
 						System.out.print(player2.name + " wins!");
 						break;
-					} else {
+					} 
+					
+					else {
 						grid.printGrid();
 					}
 				}
